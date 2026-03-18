@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>AI Athlete Injury Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>AI Athlete Injury Assistant</h1>
+
+<div class="container">
+
+<h3>Select Body Area</h3>
+
+<p id="bodyLabel">Hover over the body</p>
+
+<svg viewBox="0 0 200 500">
+
+<!-- Head -->
+<circle cx="100" cy="40" r="25"
+class="body-part"
+onclick="selectPart('head',this)"
+onmouseover="showLabel('Head')"
+/>
+
+<!-- Chest -->
+<rect x="80" y="70" width="40" height="80"
+class="body-part"
+onclick="selectPart('upper back',this)"
+onmouseover="showLabel('Upper Back')"
+/>
+
+<!-- Lower Back -->
+<rect x="80" y="150" width="40" height="60"
+class="body-part"
+onclick="selectPart('lower back',this)"
+onmouseover="showLabel('Lower Back')"
+/>
+
+<!-- Left Shoulder -->
+<circle cx="60" cy="90" r="18"
+class="body-part"
+onclick="selectPart('shoulder',this)"
+onmouseover="showLabel('Shoulder')"
+/>
+
+<!-- Right Shoulder -->
+<circle cx="140" cy="90" r="18"
+class="body-part"
+onclick="selectPart('shoulder',this)"
+onmouseover="showLabel('Shoulder')"
+/>
+
+<!-- Left Arm -->
+<rect x="45" y="110" width="20" height="90"
+class="body-part"
+onclick="selectPart('elbow',this)"
+onmouseover="showLabel('Arm / Elbow')"
+/>
+
+<!-- Right Arm -->
+<rect x="135" y="110" width="20" height="90"
+class="body-part"
+onclick="selectPart('elbow',this)"
+onmouseover="showLabel('Arm / Elbow')"
+/>
+
+<!-- Hip -->
+<rect x="80" y="210" width="40" height="40"
+class="body-part"
+onclick="selectPart('hip',this)"
+onmouseover="showLabel('Hip')"
+/>
+
+<!-- Left Quad -->
+<rect x="75" y="250" width="20" height="80"
+class="body-part"
+onclick="selectPart('quad',this)"
+onmouseover="showLabel('Quadriceps')"
+/>
+
+<!-- Right Quad -->
+<rect x="105" y="250" width="20" height="80"
+class="body-part"
+onclick="selectPart('quad',this)"
+onmouseover="showLabel('Quadriceps')"
+/>
+
+<!-- Left Knee -->
+<rect x="75" y="330" width="20" height="50"
+class="body-part"
+onclick="selectPart('knee',this)"
+onmouseover="showLabel('Knee')"
+/>
+
+<!-- Right Knee -->
+<rect x="105" y="330" width="20" height="50"
+class="body-part"
+onclick="selectPart('knee',this)"
+onmouseover="showLabel('Knee')"
+/>
+
+<!-- Left Ankle -->
+<rect x="75" y="380" width="20" height="60"
+class="body-part"
+onclick="selectPart('ankle',this)"
+onmouseover="showLabel('Ankle')"
+/>
+
+<!-- Right Ankle -->
+<rect x="105" y="380" width="20" height="60"
+class="body-part"
+onclick="selectPart('ankle',this)"
+onmouseover="showLabel('Ankle')"
+/>
+
+</svg>
+
+<h3>Pain Level: <span id="painValue">5</span>/10</h3>
+
+<input
+type="range"
+min="1"
+max="10"
+value="5"
+id="painSlider"
+oninput="updatePain(this.value)"
+>
+
+<h3>Describe What You Feel</h3>
+
+<textarea
+id="symptomInput"
+placeholder="Example: Sharp pain in my shoulder when throwing..."
+></textarea>
+
+<br>
+
+<button onclick="analyzeSymptoms()">Analyze Injury</button>
+
+<div id="aiResponse" class="response-box">
+AI analysis will appear here.
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
